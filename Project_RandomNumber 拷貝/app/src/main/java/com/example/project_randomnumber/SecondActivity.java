@@ -2,6 +2,7 @@ package com.example.project_randomnumber;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ public class SecondActivity extends AppCompatActivity {
         num_ans();
     }
     //返回上一頁
-    public void click_back(View v){
+    public void back_to_A(View v){
         finish();
     }
     private void num_ans(){
@@ -36,16 +37,20 @@ public class SecondActivity extends AppCompatActivity {
 
             if (number == ans){
                 big_or_small.setText("答對了");
+                big_or_small.setTextColor(Color.RED);
                 TF.setText("○");
+                TF.setTextColor(Color.RED);
 
             }
             else if (number > ans){
                 big_or_small.setText("猜小點");
+                big_or_small.setTextColor(Color.YELLOW);
                 TF.setText("X");
 
             }
             else if (number < ans){
                 big_or_small.setText("猜大點");
+                big_or_small.setTextColor(Color.YELLOW);
                 TF.setText("X");
             }
         }
